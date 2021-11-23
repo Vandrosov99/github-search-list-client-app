@@ -4,8 +4,6 @@ import MainPage from "../MainPage/MainPage";
 import "../App/App.less";
 
 const App = () => {
-  console.log("app");
-
   return (
     <BrowserRouter>
       <div className='container'>
