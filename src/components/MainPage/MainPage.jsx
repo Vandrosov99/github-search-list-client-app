@@ -11,9 +11,6 @@ const MainPage = () => {
   const reposData = useSelector(makeSelectReposItems());
   const isFetching = useSelector(makeSelectIsFetching());
 
-  console.log("MAIN PAGE RENDER");
-  console.log(isFetching);
-
   useEffect(() => {
     dispatch(getRepositories());
   }, []);
@@ -24,7 +21,7 @@ const MainPage = () => {
         <Loader />
       ) : (
         <div>
-          <Search />
+          <Search dispatch={dispatch} getRepositories={getRepositories} />
           <Repolist reposData={reposData} />
         </div>
       )}
